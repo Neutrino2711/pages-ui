@@ -147,11 +147,27 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  simple_page_indicator:
+    dependency: "direct main"
+    description:
+      name: simple_page_indicator
+      sha256: d4641502232060a525d7216c9141292aee421f356286f8fc8d5e1cb066a8d414
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   sky_engine:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.99"
+  smooth_page_indicator:
+    dependency: "direct main"
+    description:
+      name: smooth_page_indicator
+      sha256: "3b28b0c545fa67ed9e5997d9f9720d486f54c0c607e056a1094544e36934dff3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0+3"
   source_span:
     dependency: transitive
     description:
