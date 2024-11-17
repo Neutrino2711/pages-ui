@@ -13,22 +13,24 @@ class SwipableElement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-        children: [
-          Image.asset(
-            background,
-            
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height*0.15,
-            child: Image.asset(
-              foreground,
-              height: MediaQuery.of(context).size.height*.4,
-              // width: MediaQuery.of(context).size.width,
+    return Center(
+      child: Stack(
+          children: [
+            Image.asset(
+              background,
+              
             ),
-          ),
-        ],
-      
+            Positioned(
+              top: MediaQuery.of(context).size.height*0.15,
+              child: Image.asset(
+                foreground,
+                height: MediaQuery.of(context).size.height*.4,
+                // width: MediaQuery.of(context).size.width,
+              ),
+            ),
+          ],
+        
+      ),
     );
   }
 }
