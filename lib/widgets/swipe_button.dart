@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_button/flutter_swipe_button.dart';
-import 'package:swipe_start/main.dart';
+
+import '../decorations/custom_color.dart';
 
 class CustomSwipedButton extends StatelessWidget {
   const CustomSwipedButton({super.key,required this.isDragged,required this.onSwipeStart,required this.onSwipeEnd});
