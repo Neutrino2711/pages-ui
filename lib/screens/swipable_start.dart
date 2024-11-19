@@ -106,7 +106,7 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
             onSwipeStart: (){
                 setState(() {
                       isDragged = true;
-                      trackColor = Colors.red;
+                      // trackColor = Colors.blue;
                     });
             }, 
               onSwipeEnd: () {
