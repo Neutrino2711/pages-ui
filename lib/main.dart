@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
-            swipeBorderColor: Color(0xFFB5242A),
-            swipeThumbColor:  Color(0xFFD5151D),
+            swipeBorderColor: Color(0xFF163EC8),
+            swipeThumbColor:  Color(0xFF163EC8),
           ),
         ],
         textTheme: const TextTheme(

@@ -34,16 +34,27 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
     super.initState();
 
     _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
+      // if (_currentPageIndex < _totalPages - 1) {
+      //   _currentPageIndex++;
+      //   _pageController.animateToPage(
+      //     _currentPageIndex,
+      //     duration: const Duration(milliseconds: 500),
+      //     curve: Curves.easeInOut,
+      //   );
+      // } else {
+      //   _timer.cancel();
+      // }
       if (_currentPageIndex < _totalPages - 1) {
-        _currentPageIndex++;
-        _pageController.animateToPage(
-          _currentPageIndex,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
-        );
-      } else {
-        _timer.cancel();
-      }
+  _currentPageIndex++;
+} else {
+  _currentPageIndex = 0; // Reset to the first page
+}
+_pageController.animateToPage(
+  _currentPageIndex,
+  duration: const Duration(milliseconds: 500),
+  curve: Curves.easeInOut,
+);
+
     });
   }
 
@@ -68,7 +79,7 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
       ),
     Expanded(
       child: Center(
-        child: Image.asset('assets/images/main1.png'), 
+        child: Image.asset('assets/images/image 61.png'), 
       ),
     ),
     const Icon(
@@ -87,16 +98,26 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
                 controller: _pageController,
                 children: const [
                   SwipableElement(
-                    background: 'assets/images/Group 104.png',
-                    foreground: 'assets/images/Group 99.png',
+                    isFirst: true,
+                    topTextfirst: "Nice to see you",
+                    topTextsecond: "Welcome to Hiremi",
+                    foreground: 'assets/images/Group 99 (1).png',
+                    bottomText: "Where your career needs are at your fingertips.",
                   ),
                   SwipableElement(
-                    background: 'assets/images/Group 104 (1).png',
-                    foreground: 'assets/images/Group 210.png',
+                    isFirst: false,
+                    topTextfirst: "Get Personalized",
+                    topTextsecond: "Personal Guidance",
+                    foreground: 'assets/images/Group 210 (1).png',
+                    bottomText: "Receive tailored advice and insights to help you make the best decisions for your career.",
                   ),
                   SwipableElement(
-                    background: 'assets/images/Group 104 (2).png',
-                    foreground: 'assets/images/Group 211.png',
+                    isFirst: false,
+                    topTextfirst: "Discover Exclusive",
+                    topTextsecond: "Opportunities",
+                    foreground: 'assets/images/Group 211 (1).png',
+                    bottomText: 'Get personalized job and internship opportunities in various domains tailored to your skills.',
+
                   ),
                 ],
               ),

@@ -45,9 +45,9 @@ class CustomSwipedButton extends StatelessWidget {
                   onSwipeStart: onSwipeStart,
                   onSwipeEnd: onSwipeEnd,
                   child: Text(
-                    isDragged? "Lets Go": "Swipe to Start",
+                    isDragged? "Lets Go": "Swipe To start",
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: isDragged? Colors.white: Colors.black,
+                      color: customColors.swipeBorderColor,
                     ),
                   )
                 ),
