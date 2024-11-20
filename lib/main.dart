@@ -20,19 +20,19 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         extensions: const [
           CustomColors(
-            swipeGradient:  LinearGradient(
-              colors: [
-                Color(0xFFB3242A),
-                Color(0xFFB8252B),
-                Color(0xFF9D1F24),
-                Color(0xFF741A1E),
-                Color(0xFF76181B),
-                Color(0xFF6F161A),
-                Color(0xFF5D1316),
-              ],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-            ),
+            // swipeGradient:  LinearGradient(
+            //   colors: [
+            //     Color(0xFFB3242A),
+            //     Color(0xFFB8252B),
+            //     Color(0xFF9D1F24),
+            //     Color(0xFF741A1E),
+            //     Color(0xFF76181B),
+            //     Color(0xFF6F161A),
+            //     Color(0xFF5D1316),
+            //   ],
+            //   begin: Alignment.centerLeft,
+            //   end: Alignment.centerRight,
+            // ),
             swipeBorderColor: Color(0xFF163EC8),
             swipeThumbColor:  Color(0xFF163EC8),
           ),

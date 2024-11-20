@@ -22,9 +22,9 @@ class CustomSwipedButton extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: isDragged ? null : Colors.white,
-                  gradient: isDragged
-                      ?customColors.swipeGradient
-                      : null,
+                  // gradient: isDragged
+                  //     // ?customColors.swipeGradient
+                  //     : null,
                   border: Border.all(
                     color: customColors.swipeBorderColor,
                     width: 2.0,
