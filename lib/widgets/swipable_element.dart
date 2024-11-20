@@ -48,7 +48,7 @@ class SwipableElement extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: 'mi', 
+                          text: 'mi.', 
                           style: textTheme.titleLarge!.copyWith(
                             color: customColors.swipeBorderColor,
                           ),

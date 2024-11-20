@@ -107,22 +107,22 @@ _pageController.animateToPage(
                 children: const [
                   SwipableElement(
                     isFirst: true,
-                    topTextfirst: "Nice to see you",
-                    topTextsecond: "Welcome to Hiremi",
+                    topTextfirst: "Nice to see you,",
+                    topTextsecond: "Welcome to Hiremi.",
                     foreground: 'assets/images/Group 99 (1).png',
                     bottomText: "Where your career needs are at your fingertips.",
                   ),
                   SwipableElement(
                     isFirst: false,
-                    topTextfirst: "Get Personalized",
-                    topTextsecond: "Personal Guidance",
+                    topTextfirst: "Get Personalized,",
+                    topTextsecond: "Personal Guidance.",
                     foreground: 'assets/images/Group 210 (1).png',
                     bottomText: "Receive tailored advice and insights to help you make the best decisions for your career.",
                   ),
                   SwipableElement(
                     isFirst: false,
-                    topTextfirst: "Discover Exclusive",
-                    topTextsecond: "Opportunities",
+                    topTextfirst: "Discover Exclusive,",
+                    topTextsecond: "Opportunities...",
                     foreground: 'assets/images/Group 211 (1).png',
                     bottomText: 'Get personalized job and internship opportunities in various domains tailored to your skills.',
 
