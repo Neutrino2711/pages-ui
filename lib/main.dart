@@ -37,24 +37,29 @@ class MyApp extends StatelessWidget {
             swipeThumbColor:  Color(0xFF163EC8),
           ),
         ],
-        textTheme: const TextTheme(
+        textTheme: TextTheme(
+
           bodyMedium: TextStyle(
-            fontSize: 18,
+            fontFamily: "Poppins",
+            fontSize: MediaQuery.of(context).size.width*0.035,
             fontWeight: FontWeight.w500,
           ),
            titleLarge: TextStyle(
-            fontSize: 30,
+            fontFamily: "Poppins",
+            fontSize: MediaQuery.of(context).size.width * 0.07,
             fontWeight: FontWeight.w800,
-            color: Color(0xFF163EC8),
+            color: const Color(0xFF163EC8),
           ),
           bodySmall: TextStyle(
-            fontSize: 12,
+            fontFamily: "Poppins",
+            fontSize: MediaQuery.of(context).size.width * 0.03,
             fontWeight: FontWeight.w400,
             color: Colors.grey,
           ),
           headlineSmall: TextStyle(
-            fontSize: 20,
-            color: Color(0xFF6983D9),
+            fontFamily: "Poppins",
+            fontSize: MediaQuery.of(context).size.width * 0.07,
+            color: const Color(0xFF6983D9),
           ),
         ),
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

@@ -18,7 +18,10 @@ class CustomSwipedButton extends StatelessWidget {
 
 
     return   Padding(
-              padding: const EdgeInsets.all(32.0),
+              padding: EdgeInsets.symmetric(
+                vertical: 
+                MediaQuery.of(context).size.width * 0.07
+              ),
               child: Container(
                 decoration: BoxDecoration(
                   color: isDragged ? null : Colors.white,
@@ -27,20 +30,26 @@ class CustomSwipedButton extends StatelessWidget {
                   //     : null,
                   border: Border.all(
                     color: customColors.swipeBorderColor,
-                    width: 2.0,
+                    width: MediaQuery.of(context).size.width * 0.005,
                   ),
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(
+                    MediaQuery.of(context).size.width * 0.1
+                  ),
                 ),
                 child: SwipeButton(
-                  height: 60,
-                  thumbPadding: const EdgeInsets.all(7),
+                  height: MediaQuery.of(context).size.width * 0.15,
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  thumbPadding: EdgeInsets.all(
+                    MediaQuery.of(context).size.width * 0.02,
+                    
+                  ),
                   thumb: const Icon(
                     Icons.chevron_right,
                     color: Colors.white,
                   ),
                   activeThumbColor: customColors.swipeThumbColor,
                   activeTrackColor: Colors.transparent,
-                
+                  
                   onSwipe: () {},
                   onSwipeStart: onSwipeStart,
                   onSwipeEnd: onSwipeEnd,

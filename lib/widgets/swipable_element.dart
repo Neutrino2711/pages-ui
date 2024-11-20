@@ -23,66 +23,67 @@ class SwipableElement extends StatelessWidget {
     final customColors = Theme.of(context).extension<CustomColors>()!;
     final textTheme = Theme.of(context).textTheme;
 
-    return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            topTextfirst,
-            style: textTheme.headlineSmall,
-          ),
-          isFirst
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Welcome to ",
-                      style: textTheme.titleLarge, 
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Hire', 
-                            style: textTheme.bodyMedium!.copyWith(
-                              color: Colors.black, 
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'mi', 
-                            style: textTheme.bodyMedium!.copyWith(
-                              color: customColors.swipeBorderColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                )
-              : Text(
-                  topTextsecond,
-                  style: textTheme.titleLarge!.copyWith(
-                    color: const Color(0xFF2FA270), 
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          topTextfirst,
+          style: textTheme.headlineSmall,
+        ),
+        isFirst
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Welcome to ",
+                    style: textTheme.titleLarge, 
                   ),
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Hire', 
+                          style: textTheme.titleLarge!.copyWith(
+                            color: Colors.black, 
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'mi', 
+                          style: textTheme.titleLarge!.copyWith(
+                            color: customColors.swipeBorderColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              )
+            : Text(
+                topTextsecond,
+                style: textTheme.titleLarge!.copyWith(
+                  color: const Color(0xFF2FA270), 
                 ),
-          const SizedBox(
-            height: 30,
-          ),
-          Image.asset(
-            foreground,
-            height: MediaQuery.of(context).size.height * .4,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Text(
-            bottomText,
-            textAlign: TextAlign.center,
-            style: textTheme.bodySmall, 
-          ),
-        ],
-      ),
+              ),
+        const SizedBox(
+          height: 30,
+        ),
+        Image.asset(
+          foreground,
+          height: MediaQuery.of(context).size.height * .4,
+        ),
+         SizedBox(
+          height: MediaQuery.of(context).size.height * 0.05,
+        ),
+        Text(
+          bottomText,
+          textAlign: TextAlign.center,
+          style: textTheme.bodySmall!.copyWith(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ), 
+        ),
+      ],
     );
   }
 }

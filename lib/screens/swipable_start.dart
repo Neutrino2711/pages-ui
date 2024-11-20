@@ -47,7 +47,7 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
       if (_currentPageIndex < _totalPages - 1) {
   _currentPageIndex++;
 } else {
-  _currentPageIndex = 0; // Reset to the first page
+  _currentPageIndex = 0; 
 }
 _pageController.animateToPage(
   _currentPageIndex,
@@ -67,29 +67,37 @@ _pageController.animateToPage(
 
   @override
   Widget build(BuildContext context) {
+
+    final Width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         actions:  [
         
       IconButton(
-        icon: const Icon(Icons.chevron_left),
+        icon:  Icon(Icons.chevron_left,
+         size: Width * 0.05,
+        ),
         onPressed: () {
           
         },
+        
       ),
     Expanded(
       child: Center(
         child: Image.asset('assets/images/image 61.png'), 
       ),
     ),
-    const Icon(
+     Icon(
       Icons.chevron_right,
-      size: 25.0,
+      size: Width * 0.05,
     ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(
+          Width * 0.025
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

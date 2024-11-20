@@ -11,20 +11,25 @@ class CustomSlideIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final themeWidth = MediaQuery.of(context).size.width;
+
     return   Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(
+                MediaQuery.of(context).size.width * 0.01,
+              ),
               child: SmoothPageIndicator(
                 
                 controller: pageController, count: 3,
                effect:  SlideEffect(    
-                      spacing:  16.0,    
-                      radius:  8.0,    
-                      dotWidth:  70.0,    
-                      dotHeight:  3.5,    
-                      paintStyle:  PaintingStyle.stroke,    
-                      strokeWidth:  1.5,    
+                      spacing:  themeWidth * 0.025,    
+                      radius:  themeWidth * 0.05,    
+                      dotWidth:  themeWidth * 0.175,    
+                      dotHeight:  themeWidth * 0.02,    
+                      paintStyle:  PaintingStyle.fill,    
+                      // strokeWidth:  1.5,    
                       
-                      dotColor:  Colors.grey,    
+                      dotColor:  const Color(0xFFD4D4D4),    
                       activeDotColor:  Theme.of(context).extension<CustomColors>()!.swipeBorderColor,  
                         ), 
                         
