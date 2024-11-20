@@ -41,7 +41,21 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
-          )
+          ),
+           titleLarge: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFF163EC8),
+          ),
+          bodySmall: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: Colors.grey,
+          ),
+          headlineSmall: TextStyle(
+            fontSize: 20,
+            color: Color(0xFF6983D9),
+          ),
         ),
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
