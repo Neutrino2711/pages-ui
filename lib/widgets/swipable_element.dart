@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../decorations/custom_color.dart';
+import '../constants/constants.dart';
 
 class SwipableElement extends StatelessWidget {
-  const SwipableElement({
+   const SwipableElement({
     super.key,
     required this.topTextfirst,
     required this.topTextsecond,
@@ -18,8 +19,12 @@ class SwipableElement extends StatelessWidget {
   final String bottomText;
   final bool isFirst;
 
+  
+
   @override
   Widget build(BuildContext context) {
+
+    final TextConstants  textConstants = TextConstants();
     final customColors = Theme.of(context).extension<CustomColors>()!;
     final textTheme = Theme.of(context).textTheme;
 
@@ -35,20 +40,20 @@ class SwipableElement extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Welcome to ",
+                    textConstants.kPage1TopTextSecond,
                     style: textTheme.titleLarge, 
                   ),
                   Text.rich(
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: 'Hire', 
+                          text: textConstants.kPage1TopTextSecondFirstHalf, 
                           style: textTheme.titleLarge!.copyWith(
                             color: Colors.black, 
                           ),
                         ),
                         TextSpan(
-                          text: 'mi.', 
+                          text: textConstants.kPage1TopTextSecondSecondHalf, 
                           style: textTheme.titleLarge!.copyWith(
                             color: customColors.swipeBorderColor,
                           ),

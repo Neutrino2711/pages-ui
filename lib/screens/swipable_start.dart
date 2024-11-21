@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:swipe_start/constants/constants.dart';
 
 import 'package:swipe_start/screens/new.dart';
 
@@ -28,6 +29,10 @@ class _SwipableStartScreenState extends State<SwipableStartScreen> {
   final int _totalPages = 3;
   bool isDragged = false;
   Color trackColor = Colors.white;
+
+
+   final TextConstants textConstants = TextConstants();
+  final ImageDirectoryConstants imageConstants = ImageDirectoryConstants();  
 
   @override
   void initState() {
@@ -68,7 +73,8 @@ _pageController.animateToPage(
   @override
   Widget build(BuildContext context) {
 
-    final Width = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.of(context).size.width;
+   
 
     return Scaffold(
       appBar: AppBar(
@@ -76,7 +82,7 @@ _pageController.animateToPage(
         
       IconButton(
         icon:  Icon(Icons.chevron_left,
-         size: Width * 0.05,
+         size: screenWidth * 0.05,
         ),
         onPressed: () {
           
@@ -85,18 +91,18 @@ _pageController.animateToPage(
       ),
     Expanded(
       child: Center(
-        child: Image.asset('assets/images/image 61.png'), 
+        child: Image.asset(imageConstants.kBannerImage), 
       ),
     ),
      Icon(
       Icons.chevron_right,
-      size: Width * 0.05,
+      size: screenWidth * 0.05,
     ),
         ],
       ),
       body: Padding(
         padding: EdgeInsets.all(
-          Width * 0.025
+          screenWidth * 0.025
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -104,27 +110,27 @@ _pageController.animateToPage(
             Expanded(
               child: PageView(
                 controller: _pageController,
-                children: const [
+                children:  [
                   SwipableElement(
                     isFirst: true,
-                    topTextfirst: "Nice to see you,",
-                    topTextsecond: "Welcome to Hiremi.",
-                    foreground: 'assets/images/Group 99 (1).png',
-                    bottomText: "Where your career needs are at your fingertips.",
+                    topTextfirst: textConstants.kPage1TopTextFirst,
+                    topTextsecond: textConstants.kPage1TopTextSecond,
+                    foreground: imageConstants.kPage1Image,
+                    bottomText: textConstants.kPage1BottomText,
                   ),
                   SwipableElement(
                     isFirst: false,
-                    topTextfirst: "Get Personalized,",
-                    topTextsecond: "Personal Guidance.",
-                    foreground: 'assets/images/Group 210 (1).png',
-                    bottomText: "Receive tailored advice and insights to help you make the best decisions for your career.",
+                    topTextfirst: textConstants.kPage2TopTextFirst,
+                    topTextsecond: textConstants.kPage2TopTextSecond,
+                    foreground: imageConstants.kPage2Image,
+                    bottomText: textConstants.kPage2BottomText,
                   ),
                   SwipableElement(
                     isFirst: false,
-                    topTextfirst: "Discover Exclusive,",
-                    topTextsecond: "Opportunities...",
-                    foreground: 'assets/images/Group 211 (1).png',
-                    bottomText: 'Get personalized job and internship opportunities in various domains tailored to your skills.',
+                    topTextfirst: textConstants.kPage3TopTextFirst,
+                    topTextsecond: textConstants.kPage3TopTextSecond,
+                    foreground: imageConstants.kPage3Image,
+                    bottomText: textConstants.kPage3BottomText,
 
                   ),
                 ],
