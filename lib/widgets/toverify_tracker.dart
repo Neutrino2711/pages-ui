@@ -20,7 +20,7 @@ class ToVerifyTrackerWidget extends StatelessWidget {
             width: 1.0
             ),
             borderRadius: BorderRadius.circular(
-              screenWidth * 0.05
+              screenWidth * 0.025
             )
             
         ),
