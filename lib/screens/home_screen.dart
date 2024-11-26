@@ -129,14 +129,29 @@ class _HomePageState extends State<HomePage> {
               },
             ),),
            CustomSlideIndicator(currentIndex: _currentIndex),
-          Text(
-            "Hiremi's Featured"
+          Padding(
+            padding: EdgeInsets.all(screenWidth * 0.04),
+            child: Text(
+              "Hiremi's Featured",
+               style: TextStyle(
+                fontSize: screenWidth * 0.05,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
           ),
           SizedBox(
             height: screenWidth * 1.075,
             width: double.infinity,
             child: GridScreen()),
-          Text("Jobs for you"),
+          Padding(
+            padding: EdgeInsets.all(screenWidth * 0.04),
+            child: Text("Jobs for you",
+            style: TextStyle(
+              fontSize: screenWidth * 0.05,
+              fontWeight: FontWeight.w700,
+            ),
+            ),
+          ),
           SizedBox(
             height: screenWidth * 0.55,
             child: ListView.builder(
@@ -183,7 +198,7 @@ class TopSectionHome extends StatelessWidget {
       width: double.infinity,
       height: MediaQuery.of(context).size.height*0.25,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Color(0xFF0F3CC9),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(
             screenWidth * 0.15

@@ -13,7 +13,7 @@ class LastRow extends StatelessWidget {
     return SizedBox(
       width: screenWidth * 0.75,
       child: Card(
-        color: Colors.lightBlueAccent,
+        color: Color(0xFFD1E4FF),
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0,right:8.0),
           child: Column(

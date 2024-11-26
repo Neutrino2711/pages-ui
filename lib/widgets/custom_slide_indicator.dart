@@ -22,7 +22,7 @@ class CustomSlideIndicator extends StatelessWidget {
          decoration: BoxDecoration(
            shape: BoxShape.circle,
            color: _currentIndex == index
-               ? Colors.blue
+               ? Color(0xFF0F3CC9)
                : Colors.grey.shade400, // Highlight the active dot
          ),
        ),

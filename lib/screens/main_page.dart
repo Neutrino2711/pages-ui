@@ -76,7 +76,7 @@ class _MainPageState extends State<MainPage> {
       key: _scaffoldKey,
       appBar: isNonVerifiedTap|| _selectedIndex==4 ||_selectedIndex == 5? null:AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color(0xFF0F3CC9),
         leading: IconButton(onPressed: (){
           //side bar
           _scaffoldKey.currentState?.openDrawer();
@@ -171,7 +171,7 @@ class _MainPageState extends State<MainPage> {
               SizedBox(height: 20),
               // Verification Card
               Card(
-                color: Colors.blue[800],
+                color: Color(0xFF0F3CC9),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -325,9 +325,10 @@ class _MainPageState extends State<MainPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _buildNavBarItem(Icons.home, 0),
-                    _buildNavBarItem(Icons.search, 1),
+                    _buildNavBarItem(Icons.cases, 1),
                     _buildNavBarItem(Icons.person, 2),
-                    _buildNavBarItem(Icons.help,4),
+                    _buildNavBarItem(Icons.checklist_outlined,4),
+                    Image.asset('assets/images/grid5.png')
                   ],
                 ),
               ),
@@ -345,7 +346,7 @@ class _MainPageState extends State<MainPage> {
       onTap: () => _onItemTapped(index),
       child: Icon(
         icon,
-        color: _selectedIndex == index ? Colors.blue : Colors.grey,
+        color: _selectedIndex == index ? Color(0xFF0F3CC9) : Colors.grey,
         size: _selectedIndex == index ? 30 : 24,
       ),
     );
