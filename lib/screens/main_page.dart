@@ -350,9 +350,11 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   IconButton(onPressed: (){
                     setState(() {
-                      Navigator.pop(context);
-                      isNonVerifiedTap = false;
+                      isNonVerifiedTap = true;
                       isLogoutOverlay = true;
+                      Navigator.pop(context);
+                      // isNonVerifiedTap = false;
+                      
                       // isNonVerifiedTap = false;
                     });
                   }, icon: Icon(Icons.logout,color: Theme.of(context).primaryColor,),),
