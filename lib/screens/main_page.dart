@@ -88,7 +88,7 @@ class _MainPageState extends State<MainPage> {
           CircleAvatar(
             backgroundColor: Colors.white,
             child: IconButton(onPressed: (){
-              _onItemTapped(5);
+              _onItemTapped(4);
               //notification screen
               // Navigator.push(context,MaterialPageRoute(builder: (context)=>NotificationScreen()));
             }, icon: Icon(Icons.notifications_active_outlined)),
@@ -309,7 +309,7 @@ class _MainPageState extends State<MainPage> {
                       ),
                       trailing: IconButton(
                         onPressed: (){
-                         
+                         _onItemTapped(4);
                         },
                         icon: Icon(Icons.arrow_forward_ios, size: screenWidth*0.05,color: Theme.of(context).primaryColor)),
                     ),
@@ -402,20 +402,20 @@ class _MainPageState extends State<MainPage> {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
-                    blurRadius: 10,
+                    blurRadius: screenWidth * 0.1,
                     offset: Offset(0, 4),
                   ),
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:  EdgeInsets.symmetric(vertical: screenWidth * 0.02, horizontal: screenWidth * 0.04),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildNavBarItem(Icons.home, 0),
-                    _buildNavBarItem(Icons.cases, 1),
-                    _buildNavBarItem(Icons.person, 2),
-                    _buildNavBarItem(Icons.checklist_outlined,4),
+                    _buildNavBarItem(Icons.home, 0,"Home",screenWidth),
+                    _buildNavBarItem(Icons.cases, 1,"Jobs",screenWidth),
+                    _buildNavBarItem(Icons.person, 2,"Ask Experts",screenWidth),
+                    _buildNavBarItem(Icons.checklist_outlined,4,"Status",screenWidth),
                     Image.asset('assets/images/grid5.png')
                   ],
                 ),
@@ -429,13 +429,24 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _buildNavBarItem(IconData icon, int index) {
+  Widget _buildNavBarItem(IconData icon, int index,String label,double screenWidth) {
     return GestureDetector(
       onTap: () => _onItemTapped(index),
-      child: Icon(
-        icon,
-        color: _selectedIndex == index ? Color(0xFF0F3CC9) : Colors.grey,
-        size: _selectedIndex == index ? 30 : 24,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: _selectedIndex == index ? Color(0xFF0F3CC9) : Colors.grey,
+            size: _selectedIndex == index ? screenWidth * 0.06 : screenWidth * 0.07,
+          ),
+          Text(label 
+          ,
+          style: GoogleFonts.poppins(
+            fontSize: screenWidth * 0.03
+          ),
+          )
+        ],
       ),
     );
   }

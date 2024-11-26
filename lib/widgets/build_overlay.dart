@@ -245,7 +245,13 @@ class LogOutOverlayWidget extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            Text("Are you sure you want to Log Out"),
+            Text("Are you sure you want to Log Out",
+            style: GoogleFonts.poppins(
+              fontSize: screenWidth * 0.04,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
