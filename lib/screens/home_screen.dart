@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:not_verified_screens/screens/notification_screen.dart';
-import 'package:not_verified_screens/widgets/gridsection.dart';
+import 'package:not_verified_screens/widgets/grid/gridsection.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../widgets/custom_slide_indicator.dart';

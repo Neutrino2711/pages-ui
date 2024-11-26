@@ -6,7 +6,9 @@ import 'package:not_verified_screens/screens/about_us.dart';
 import 'package:not_verified_screens/screens/home_screen.dart';
 import 'package:not_verified_screens/screens/notification_screen.dart';
 
-import '../widgets/build_overlay.dart';
+import '../widgets/drawer_card.dart';
+import '../widgets/drawer_user_details.dart';
+import '../widgets/overlay/build_overlay.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,11 +38,11 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> _pages = [
    HomePage(),
-    Center(child: Text("Search Page", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Profile Page", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Profile Page", style: TextStyle(fontSize: 24))),
-    NotificationScreen(),
-    AboutUs(),
+   const  Center(child: Text("Search Page", style: TextStyle(fontSize: 24))),
+   const  Center(child: Text("Profile Page", style: TextStyle(fontSize: 24))),
+   const  Center(child: Text("Profile Page", style: TextStyle(fontSize: 24))),
+   const NotificationScreen(),
+   const  AboutUs(),
 
     
   ];
@@ -78,9 +80,9 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
         backgroundColor: Color(0xFF0F3CC9),
         leading: IconButton(onPressed: (){
-          //side bar
+          
           _scaffoldKey.currentState?.openDrawer();
-        }, icon: Icon(Icons.list,
+        }, icon: const Icon(Icons.list,
         color: Colors.white,
         )),
         title: Image.asset('assets/images/title.png'),
@@ -91,7 +93,7 @@ class _MainPageState extends State<MainPage> {
               _onItemTapped(4);
               //notification screen
               // Navigator.push(context,MaterialPageRoute(builder: (context)=>NotificationScreen()));
-            }, icon: Icon(Icons.notifications_active_outlined)),
+            }, icon: const Icon(Icons.notifications_active_outlined)),
           ),
         ],
       ),
@@ -111,7 +113,7 @@ class _MainPageState extends State<MainPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Circular Progress Indicator with Profile Percentage
+                
                   Stack(
                     alignment: Alignment.center,
                     children: [
@@ -119,14 +121,14 @@ class _MainPageState extends State<MainPage> {
                         height: screenWidth * 0.15,
                         width: screenWidth * 0.15,
                         child: CircularProgressIndicator(
-                          value: 0.25, // 25%
+                          value: 0.25, 
                           backgroundColor: Colors.grey[300],
                           color: Colors.green,
                           strokeWidth: 6,
                         ),
                       ),
                       Text(
-                        '25%', // Profile completion percentage
+                        '25%', 
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: screenWidth * 0.05,
@@ -135,136 +137,21 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 16),
-                  // Profile Details
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Harsh Pawar',
-                        style: GoogleFonts.poppins(
-                          fontSize: screenWidth * 0.05,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(
-                          screenWidth * 0.02,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(width: 1,
-                          color: Theme.of(context).primaryColor
-                          ),
-                         borderRadius: BorderRadius.circular(
-                          screenWidth * 0.1
-                         ),
-                         
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.verified_user,
-                              color: Theme.of(context).primaryColor,
-                              size: screenWidth * 0.03,
-                            ),
-                            SizedBox(width: screenWidth * 0.01),
-                            Text(
-                              'Not Verified',
-                              style: TextStyle(
-                                fontSize: screenWidth * 0.03,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(height: screenWidth * 0.01),
-                      Text(
-                        'HarshPawar@gmail.com',
-                        style: GoogleFonts.poppins(
-                          fontSize: screenWidth * 0.035,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
+                  SizedBox(width: screenWidth * 0.04),
+                  
+                  DrawerUserDetails(screenWidth: screenWidth),
                 ],
               ),
               SizedBox(height: screenWidth * 0.07),
-              // Verification Card
-              Card(
-                color: Color(0xFF0F3CC9),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(screenWidth * 0.05),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(screenWidth * 0.04),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'HireMi',
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontSize: screenWidth * 0.07,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(width: screenWidth * 0.02),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: screenWidth*0.01, vertical: screenWidth*0.01),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(
-                                screenWidth * 0.02
-                              ),
-                            ),
-                            child: Text(
-                              'Get Verified',
-                              style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: screenWidth*0.03,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: screenWidth * 0.02),
-                      Text(
-                        'Verify your profile to unlock premium features and lifetime benefits.',
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontSize: screenWidth*0.04,
-                        ),
-                      ),
-                      SizedBox(height: screenWidth*0.02),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              screenWidth*0.02
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          'Complete your profile & Get started',
-                          style: GoogleFonts.poppins(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: screenWidth * 0.035,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+             
+              DrawerCard(screenWidth: screenWidth),
+              
               SizedBox(height: screenWidth * 0.02),
-              // Settings List
+              Divider(
+                height: screenWidth * 0.005,
+                color: Colors.grey,
+              ),
+             
               Expanded(
                 child: ListView(
                   children: [
@@ -281,7 +168,7 @@ class _MainPageState extends State<MainPage> {
                         },
                         icon: Icon(Icons.arrow_forward_ios, size: screenWidth*0.05,color: Theme.of(context).primaryColor)),
                     ),
-                    // Divider(),
+                    
                     ListTile(
                       leading: Image.asset(('assets/images/lock_open.png'),
                       height: screenWidth*0.05,
@@ -331,18 +218,7 @@ class _MainPageState extends State<MainPage> {
                         icon: Icon(Icons.arrow_forward_ios, size: screenWidth*0.05,color: Theme.of(context).primaryColor)),
                     ),
                     
-                    // ListTile(
-                    //   leading: Icon(Icons.logout),
-                    //   title: Text('Log out',
-                    //    style: GoogleFonts.poppins(
-                    //     fontSize: screenWidth * 0.05
-                    //   ),),
-                    //    trailing: IconButton(
-                    //     onPressed: (){
-                        
-                    //     },
-                    //     icon: Icon(Icons.arrow_forward_ios, size: screenWidth*0.05,color: Theme.of(context).primaryColor)),
-                    // ),
+                  
                   ],
                 ),
               ),
@@ -353,9 +229,7 @@ class _MainPageState extends State<MainPage> {
                       isNonVerifiedTap = true;
                       isLogoutOverlay = true;
                       Navigator.pop(context);
-                      // isNonVerifiedTap = false;
                       
-                      // isNonVerifiedTap = false;
                     });
                   }, icon: Icon(Icons.logout,color: Theme.of(context).primaryColor,),),
                   Text("Log out",
@@ -429,6 +303,11 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+
+
+
+  //method for navbarItem
+
   Widget _buildNavBarItem(IconData icon, int index,String label,double screenWidth) {
     return GestureDetector(
       onTap: () => _onItemTapped(index),
@@ -453,6 +332,5 @@ class _MainPageState extends State<MainPage> {
 
   
 }
-
 
 
