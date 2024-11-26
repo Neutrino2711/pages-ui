@@ -67,7 +67,7 @@ class LastRow extends StatelessWidget {
                         screenWidth * 0.05
                       ),
                     ),
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color(0xFF0F3CC9),
                   ),
                 ),
                 Spacer(),
