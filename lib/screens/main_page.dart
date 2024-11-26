@@ -80,7 +80,9 @@ class _MainPageState extends State<MainPage> {
         leading: IconButton(onPressed: (){
           //side bar
           _scaffoldKey.currentState?.openDrawer();
-        }, icon: Icon(Icons.list)),
+        }, icon: Icon(Icons.list,
+        color: Colors.white,
+        )),
         title: Image.asset('assets/images/title.png'),
         actions: [
           CircleAvatar(
@@ -348,6 +350,8 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   IconButton(onPressed: (){
                     setState(() {
+                      Navigator.pop(context);
+                      isNonVerifiedTap = false;
                       isLogoutOverlay = true;
                       // isNonVerifiedTap = false;
                     });
