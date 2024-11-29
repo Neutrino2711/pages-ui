@@ -23,6 +23,7 @@ List<GridItem> gridItems = [
       subTexts: "Gain Practical Experience",
       imageDir: 'assets/images/grid2.png',
       colors: [
+        Color(0xFFCFFAE1),
              Color(0xFFEAFEF2),
             Color(0xFFCFFAE1),
            
@@ -32,7 +33,7 @@ List<GridItem> gridItems = [
             Colors.white,
             Color(0xFFD4FBE5),
             Color(0xFFD0FAE2),
-            Color(0xFFCFFAE1),
+            
             Color(0xFFEAFEF2),
           ],
       ),

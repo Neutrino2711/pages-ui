@@ -26,23 +26,25 @@ class _AnimatedGridCardState extends State<AnimatedGridCard>
   void initState() {
     super.initState();
 
+    
+
     // Initialize AnimationController
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 600),
+      duration: Duration(milliseconds: 200),
     );
 
     
     _animation = Tween<Offset>(
-      begin: Offset(widget.index % 2 == 0 ? -1.0 : 1.0, 0), //left if even, right if odd
+      begin: Offset(widget.index % 2 == 0 ? -2.0 : 2.0, 0), //left if even, right if odd
       end: Offset(0, 0),
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeInOut,
+      curve: Curves.easeInOutBack,
     ));
 
-    
-    Future.delayed(Duration(milliseconds: 100 * widget.index), () {
+    int rowIndex = widget.index ~/ 2;
+    Future.delayed(Duration(seconds: 5 + 1 *rowIndex ), () {
       if (mounted) {
         _controller.forward();
       }

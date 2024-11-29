@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LastRow extends StatelessWidget {
   const LastRow({
@@ -11,60 +12,71 @@ class LastRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: screenWidth * 0.75,
+      width: screenWidth * 0.825,
       child: Card(
         color: Color(0xFFD1E4FF),
         child: Padding(
-          padding: const EdgeInsets.only(left: 8.0,right:8.0),
+          padding: EdgeInsets.only(
+            left: screenWidth * 0.05,
+            // right:screenWidth * 0.05,
+            ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
+                // mainAxisAlignment: MainAxisAlignment.,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.all(
-                      screenWidth * 0.01
-                    ),
-                    child: Text("Motion Designer",
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.04,
-                      fontWeight: FontWeight.bold
-                    )
-                    ),
+                  Text("Motion Designer",
+                  style: GoogleFonts.poppins(
+                    fontSize: screenWidth * 0.04,
+                    fontWeight: FontWeight.w600
+                  )
                   ),
-                  Spacer(),
-                  Icon(Icons.location_on,
-                  size: screenWidth*0.015,
+                  SizedBox(
+                    width: screenWidth * 0.001,
+                  ),
+                  // Spacer(),
+                  Padding(
+                    padding: EdgeInsets.symmetric( horizontal: screenWidth*0.01),
+                    child: Icon(
+                      Icons.location_on,
+                    size: screenWidth*0.03,
+                    color: Colors.grey,
+                    ),
                   ),
                   Text("Banglore",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontSize: screenWidth*0.03,
+                    color: Colors.grey
                   ),
                   ),
                 ],
               ),
              Text("Senior . Fulltime . Remote", 
-             style: TextStyle(
+             style: GoogleFonts.poppins(
               color: Colors.grey
              ),
              ),
               Text("Pinterest, Inc.",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w500,
+                fontSize: screenWidth * 0.04
               )
               ),
               Row(children: [
                 ElevatedButton(onPressed: (){}, child: Text("Apply Now",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   color: Colors.white,
+                  fontSize: screenWidth * 0.045,
+                  fontWeight: FontWeight.w700
                 ),
                 ), style: 
                 ElevatedButton.styleFrom(
                     minimumSize:  Size(screenWidth * 0.3, screenWidth * 0.15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                        screenWidth * 0.05
+                        screenWidth * 0.03
                       ),
                     ),
                     backgroundColor: Color(0xFF0F3CC9),
@@ -76,16 +88,17 @@ class LastRow extends StatelessWidget {
                       children: [
                         TextSpan(
                   text: '70K', 
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold, // Make '70K' bold
-                    fontSize: 16, // You can set the font size here
+                    fontSize: screenWidth*0.05, // You can set the font size here
                   ),
                         ),
                         TextSpan(
-                  text: '/month', 
-                  style: TextStyle(
+                  text: '/Month', 
+                  style: GoogleFonts.poppins(
                     fontWeight: FontWeight.normal, // Normal weight for '/month'
-                    fontSize: 16, // Same font size to match
+                    fontSize: screenWidth * 0.0275,
+                    color: Colors.grey // Same font size to match
                   ),
                         ),
                       ],

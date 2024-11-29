@@ -10,14 +10,15 @@ class CustomSlideIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Row(
      mainAxisAlignment: MainAxisAlignment.center,
      children: List.generate(
        4, // Number of dots matching the items in the carousel
        (index) => AnimatedContainer(
          duration: const Duration(milliseconds: 300),
-         width: _currentIndex == index ? 12.0 : 8.0,
-         height: 8.0,
+         width: _currentIndex == index ? screenWidth*0.02 : screenWidth *0.02,
+         height: screenWidth * 0.02,
          margin: const EdgeInsets.symmetric(horizontal: 4.0),
          decoration: BoxDecoration(
            shape: BoxShape.circle,

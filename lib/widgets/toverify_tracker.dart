@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:not_verified_screens/widgets/verification_card.dart';
 
 class ToVerifyTrackerWidget extends StatelessWidget {
   const ToVerifyTrackerWidget({
@@ -29,13 +30,14 @@ class ToVerifyTrackerWidget extends StatelessWidget {
           padding: EdgeInsets.all(
             screenWidth * 0.015
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-            Image.asset('assets/images/home_card_top.png'),
-            Image.asset('assets/images/card_flow.png'),
-            Image.asset('assets/images/card_bottom.png'),
-          ],),
+          child: VerificationSection(),
+          // child: Column(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //   Image.asset('assets/images/home_card_top.png'),
+          //   Image.asset('assets/images/card_flow.png'),
+          //   Image.asset('assets/images/card_bottom.png'),
+          // ],),
         ),
       ),
     );

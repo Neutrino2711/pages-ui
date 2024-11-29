@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:not_verified_screens/screens/notification_screen.dart';
 import 'package:not_verified_screens/widgets/grid/gridsection.dart';
+import 'package:not_verified_screens/widgets/verification_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../widgets/custom_slide_indicator.dart';
@@ -104,30 +105,34 @@ class _HomePageState extends State<HomePage> {
          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TopSectionHome(screenWidth: screenWidth),
+            // TopSectionHome(screenWidth: screenWidth),
+            VerificationSection(),
             // SizedBox(
             //   height:  screenWidth * 0.01,
             // ),//later to be removed
-           CarouselSlider.builder(
-            itemCount: imagePaths.length,
-            itemBuilder: (context, index, realIndex) {
-              return CarouselItem(
-                imagePath: imagePaths[index],
-                padding: screenWidth * 0.05,
-                borderRadius: 20.0,
-              );
-            },
-            options: CarouselOptions(
-              viewportFraction: 1,
-              autoPlay: true,
-              height: screenWidth * 0.5,
-              aspectRatio: 16 / 9,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentIndex = index; // Update the active index
-                });
+           SizedBox(
+            height: screenWidth * 0.35,
+             child: CarouselSlider.builder(
+              itemCount: imagePaths.length,
+              itemBuilder: (context, index, realIndex) {
+                return CarouselItem(
+                  imagePath: imagePaths[index],
+                  padding: screenWidth * 0.05,
+                  borderRadius: 20.0,
+                );
               },
-            ),),
+              options: CarouselOptions(
+                viewportFraction: 1,
+                autoPlay: true,
+                height: screenWidth * 0.5,
+                aspectRatio: 16 / 9,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentIndex = index; // Update the active index
+                  });
+                },
+              ),),
+           ),
            CustomSlideIndicator(currentIndex: _currentIndex),
           Padding(
             padding: EdgeInsets.all(screenWidth * 0.04),
@@ -139,12 +144,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(
-            height: screenWidth * 1.075,
-            width: double.infinity,
-            child: GridScreen()),
           Padding(
-            padding: EdgeInsets.all(screenWidth * 0.04),
+            padding:  EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
+            child: SizedBox(
+              height: screenWidth * 0.95,
+              width: double.infinity,
+              child: GridScreen()),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal:  screenWidth * 0.04,vertical: screenWidth * 0.01),
             child: Text("Jobs for you",
             style: TextStyle(
               fontSize: screenWidth * 0.05,
@@ -152,26 +160,29 @@ class _HomePageState extends State<HomePage> {
             ),
             ),
           ),
-          SizedBox(
-            height: screenWidth * 0.55,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context,builder){
-                    return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: LastRow(screenWidth: screenWidth),
-              );
-                },
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.01),
+            child: SizedBox(
+              height: screenWidth * 0.5,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context,builder){
+                      return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: LastRow(screenWidth: screenWidth),
+                );
+                  },
+              ),
             ),
           ),
             // Padding(
             //   padding: const EdgeInsets.all(8.0),
             //   child: LastRow(screenWidth: screenWidth),
             // ),
-            SizedBox(
-              height: screenWidth * 0.65,
-            )
+            // SizedBox(
+            //   height: screenWidth * 0.3,
+            // )
 
             
           ],
@@ -196,7 +207,7 @@ class TopSectionHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height*0.25,
+      height: MediaQuery.of(context).size.height*0.2,
       decoration: BoxDecoration(
         color: Color(0xFF0F3CC9),
         borderRadius: BorderRadius.only(

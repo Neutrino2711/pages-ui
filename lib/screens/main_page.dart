@@ -1,10 +1,12 @@
 import 'dart:ui';
 
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:not_verified_screens/screens/about_us.dart';
 import 'package:not_verified_screens/screens/home_screen.dart';
 import 'package:not_verified_screens/screens/notification_screen.dart';
+import 'package:not_verified_screens/widgets/overlay/initial_overlay.dart';
 
 import '../widgets/drawer_card.dart';
 import '../widgets/drawer_user_details.dart';
@@ -28,6 +30,44 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
+
+ bool _showInitialOverlay = true;
+
+  //  late ConfettiController _confettiController;
+
+  @override
+  void initState() {
+    super.initState();
+
+
+     Future.delayed(Duration(seconds: 5), () {
+      if (mounted) {
+        setState(() {
+          _showInitialOverlay = false; 
+        });
+      }
+    });
+   
+  }
+
+  // void _showConfettiDialog() {
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return 
+  //     },
+    // );
+
+    // Play the confetti animation
+  
+    // Automatically close the dialog after 2 seconds
+    // Future.delayed(Duration(seconds: 4), () {
+    //   if (mounted) {
+    //     Navigator.of(context).pop();
+    //   }
+    // });
+  // }
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final PageController _pageController = PageController();
@@ -69,6 +109,9 @@ class _MainPageState extends State<MainPage> {
     }
     
   }
+
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -251,9 +294,9 @@ class _MainPageState extends State<MainPage> {
             children: _pages,
           ),
           Positioned(
-            bottom: 20,
-            left: 20,
-            right: 20,
+            bottom: screenWidth * 0.04,
+            left: screenWidth * 0.04,
+            right: screenWidth * 0.04,
             child: Container(
               height: screenWidth*0.2,
               decoration: BoxDecoration(
@@ -296,12 +339,20 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
-          if(isNonVerifiedTap)  BuildOverlay(isNonVerifiedTap:  isNonVerifiedTap,isLogOutOverlay: isLogoutOverlay,)
-          
+          if(isNonVerifiedTap)  BuildOverlay(isNonVerifiedTap:  isNonVerifiedTap,isLogOutOverlay: isLogoutOverlay,),
+
+       
+        if(_showInitialOverlay)  Positioned(
+            top: screenWidth * 0.5 ,
+            left: screenWidth * 0.1,
+            // right: screenWidth * 0.1,
+            child: InitialOverlay())
         ],
       ),
     );
   }
+
+
 
 
 
